@@ -78,3 +78,8 @@ console.log(counter1());
 ## Lưu ý
 - Biến được tham chiếu (refer) trong closure sẽ không được xoá khỏi bộ nhớ khi hàm cha thực thi xong
 - Các khai niệm Javascript nâng cao rất dễ gây nhầm lẫn
+  - IIFE dễ nhầm với Closure
+  - IIFE dễ nhầm với anonymous function
+  - Callback với Closure
+
+  > Nhưng thường dùng IIFE để tạo ra hàm có ứng dụng mới để tạo ra Closure

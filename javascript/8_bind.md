@@ -1,4 +1,5 @@
 # Bind function - Ràng buộc
+- Là phương thức trong prototype của Function constructor
 - Giúp ràng buộc đối tượng trong hàm, trong phương thức
 - Ràng buộc `this` nào cũng được.
 

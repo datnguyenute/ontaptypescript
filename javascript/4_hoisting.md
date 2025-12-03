@@ -23,8 +23,22 @@ age = 16;
 console.log(sum(1,2)); // 3
 function sum(a, b) {return a + b}
 ```
-> Lưu ý: Phần khai báo được đưa lên trên, phần gán giá trị không được đưa lên.
+> Lưu ý: Phần khai báo được đưa lên trên, phần gán giá trị không được đưa lên.<br>
 
+> Lưu ý 2: Tất cả var a đều thuộc CÙNG MỘT scope 
+```
+{
+  var a = 1;
+  {
+    var a = 2;
+    {
+      console.log(a);
+      var a = 3;
+    }
+  }
+}
+// Output: 2 (không phải là undefined)
+```
 ## Hoisting với "let", "const"
 
 - Ví dụ:

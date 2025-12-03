@@ -37,3 +37,76 @@ console.log(getFull3()); // Long Nguyen
     // hoặc khi sử dụng
     console.log(getFull3(... đối số)); // Long Nguyen
   ```
+
+```
+const $ = document.querySelector.bind(document)
+const $$ = document.querySelectorAll.bind(document)
+$('button').onclick = function() {
+  console.log('Clicking');
+}
+
+```
+## Tóm tắt
+- Phương thức `bind()` cho phép ràng buộc `this` cho một phương thức (function).
+- Phương thức `bind()` sẽ trả về một hàm mới với context mới được bind.
+- Hàm được trả về từ `bind()` vẫn có thể nhận được các đối số của hàm gốc.
+
+
+## Ví dụ ứng dụng quản lý ô tô
+```
+const $ = document.querySelector.bind(document)
+const $$ = document.querySelectorAll.bind(document)
+const app = (function() {
+  const cars = [];
+
+  cars.push('BMW');
+
+  const root = $('#root');
+  const input = $('#input');
+  const button = $('#add');
+
+  return { // <= Closure
+    add(car) {
+      cars.push(car);
+      this.render();
+    },
+    delete(index) {
+      cars.splice(index, 1);
+    },
+    render() {
+      const htmlRender = cars.map((car, index) => `
+        <li>
+          ${car}
+          <span class="delete" data-index=${index}>&times</span>
+        </li>
+        `).join('');
+      root.innerHTML = htmlRender;
+    },
+    handleDelete(e) {
+      const deleteBtn =  e.target.closest('.delete');
+      if (deleteBtn) {
+        const index = deleteBtn.dataset.index;
+        this.delete(index);
+        this.render();
+      }
+    },
+    init: function() {
+      // Handle DOM event
+      button.onclick = () => {
+        const car = input.value;
+        this.add(car);
+        this.render();
+
+        input.value = null;
+        input.focus();
+      }
+
+      root.onclick = this.handleDelete.bind(this);
+
+      this.render();
+    }
+  }
+})(); // <= IIFE
+
+app.init();
+```

@@ -1,0 +1,17 @@
+# ReactJS
+- Là thư viện JS được sử dụng để xây dựng giao diện người dùng
+- Tại sao học ReactJS
+  - Có độ hot
+  - Cộng đồng lớn
+  - Được đánh giá thân thiện với SEO trong những Lib/FW về JS (SEO - Search Engine Optimiztion)
+  - Khả năng mở rộng và tái sử dụng cao.
+    - Facebook
+  - Hiệu suất cao
+    - Khi ứng dụng lớn thì vẫn mượt mà
+    - Có thuật toán, mẹo
+  - Phát triển nhanh
+    - Có sẵn rồi
+  - Khả năng tương thích ngược
+    - Các bản cũ có thể upgrade lên version cao hơn mà gặp ít lỗi
+  - Tương lai sáng
+    - Con của ông lớn

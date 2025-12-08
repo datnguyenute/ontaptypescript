@@ -28,6 +28,13 @@ console.log(b); // 1
  - Khi gán lại object thì vùng nhớ mới được tạo ra
  - Khi Object lồng nhau, thì cứ một object mới được tạo ra thì một vùng nhớ được tạo ra
 
+Thật ra trong JS thằng nào cũng object
+Array dùng object bình thường mà nó build lên.
+Function dùng object bình thường mà nó build lên có tổng hợp nhiều.
+
+
 ## Data type with function 
 - Value type: Lưu giá trị
 - Reference types: Lưu địa chỉ trỏ đến -> giá trị đang lưu trong vùng nhớ
+
+NextJS, NestJS

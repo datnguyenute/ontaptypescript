@@ -17,6 +17,24 @@
   - React-Native: Là cầu nối giữa React và Native (mobile tablet)
   - React-DOM: Là cầu nối giữa React và DOM (website)
 
+```
+    const courses = [{
+      name: 'HTML/CSS',
+    }, {name: 'Responsive web design'}, {name: 'ReactJS'}]
+    // Example:
+    const postItem = <ul>
+        {courses.map((course, index) => <li key={index}>{course.name}</li>)}
+    </ul>
+
+    // Get root element
+    const container = document.getElementById('root');
+    const root = ReactDOM.createRoot(container);
+
+    // ReactDOM
+    root.render(postItem);
+
+```
+
 
 # JSX - Javascript XML
 JSX: Cú pháp mở rộng của xml
@@ -31,3 +49,6 @@ Vì rất nhiều đối số để sử dụng trong React.createElement
 
 ## JSX và React-DOM
 - Cài babel: `<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>`
+
+## Hay hiển thị Warning unique "key"
+- Cần set key cho children

@@ -13,20 +13,49 @@
 <body>
   <div id="root"></div>
   <script type="text/babel">
-    const courses = [{
-      name: 'HTML/CSS',
-    }, {name: 'Responsive web design'}, {name: 'ReactJS'}]
-    // Example:
-    const postItem = <ul>
-        {courses.map(course => <li>{course.name}</li>)}
-    </ul>
+    // PostItem.js
+    function PostItem(props) {
+      console.log(props.title);
+      return (
+        <div className="post-item">
+          <img src={props.image} alt="Dummy" />
+          <h2 className="post-title">{props.title}</h2>
+          <p className="post-desc">{props.description}</p>
+          <p className="post-published">{props.publishedAt}</p>
+        </div>
+      )
+    }
 
-    // Get root element
-    const container = document.getElementById('root');
-    const root = ReactDOM.createRoot(container);
+    // App.js
+    function App() {
+      return (
+        <div id="wrapper">
+          <PostItem 
+            title="Dummy title 1"
+            image="https://dummyimage.com/150x150/000/fff"
+            description="Bạn có kiến thức ngôn ngữ..."
+            publishedAt="Một ngày trước - 5 phút..."
+          />
+          <PostItem 
+            title="Dummy title 2"
+            image="https://dummyimage.com/100x100/000/fff"
+            description="Bạn có kiến thức ngôn ngữ..."
+            publishedAt="Một ngày trước - 15 phút..."
+          />
+          <PostItem 
+            title="Dummy title 3"
+            image="https://dummyimage.com/120x120/000/fff"
+            description="Bạn có kiến thức ngôn ngữ..."
+            publishedAt="Một ngày trước - 3 phút..."
+          />
+        </div>
+      )
+    }
 
-    // ReactDOM
-    root.render(postItem);
+    // index.js
+    const root = ReactDOM.createRoot(document.getElementById('root'))
+    root.render(<App />);
+
 
   </script>
 </body>

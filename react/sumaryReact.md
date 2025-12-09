@@ -36,6 +36,13 @@ Function thì chỉ chứa code UI thôi
 - Class component
   + Có cấu trúc, có extends, cần es6 class thì mới sài
 
+Notes:
+- Khi tạo ra một function component không có giới hạn loại nào:
+  - Declaration function
+  - Annonymous function
+  - Method của một object
+  - Arrow function
+
 ### Wrapper
   - Header -> Header component
   - Content -> Content component
@@ -75,4 +82,5 @@ Function thì chỉ chứa code UI thôi
   - Prop "key" là một prop đặc biệt 
   - Prop cơ bản là một đối số của component
     => Props có thể là bất cứ dữ liệu gì
-  - Sử dụng descrtructuring
+  - Sử dụng <strong>descrtructuring</strong>
+

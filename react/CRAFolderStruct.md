@@ -1,0 +1,14 @@
+# CRA Folder Structure
+- public
+  - Là thư mục root khi mà server start
+  - Trỏ thẳng vào thư mục public (root)
+  - Nếu nhập sai path -> load file index.html
+  - favicon.ico => icon hiển thị trên tab
+  - manifest để cho trình duyệt hiểu được (phát triển khi sử dụng PWA - 1 dạng ứng dụng web hoạt động gần giống native trên điện thoại)
+  - robots.txt => để hướng dẫn công cụ tìm kiếm nên/không nên tìm
+  - src => chứa tài nguyên của chương trình
+    - index.js => webpack trỏ vào đây
+    - reportWebVitals.js => File thống kê báo cáo, giúp cung cấp công cụ trong tương lai để tối ưu trải nghiệm người dùng. thời gian render, để tăng hiệu năng. Gửi thống kê lên google,...
+  - .gitignore 
+    - => Để loại bỏ các thư mục không cần detect bởi git
+    - Sinh ra bởi ide hoặc không cần thiết ở trên git

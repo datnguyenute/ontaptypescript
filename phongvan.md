@@ -1,5 +1,15 @@
 # Questions
 
+stack chính sẽ là JS
+frontend: nextjs (page router)
+backend: NestJS
+kiến trúc là microservice
+cloud là gg cloud
+đọc thêm về clean architecture
+với DDD
+ngoài ra có unit test nữa
+
+
 ## RESTFUL API là cái gì?
 
 ## Frontend

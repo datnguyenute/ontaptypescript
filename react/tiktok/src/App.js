@@ -1,26 +1,14 @@
-import { useState } from "react";
+import Content from "./Content";
+import { ThemeContext } from "./ThemeContext";
 import "./App.css";
+import { useContext } from "react";
+
 function App() {
-  const [info, setInfo] = useState({
-    name: "ABC",
-    age: 11,
-    address: "HCM",
-  });
-
-  const handleUpdate = () => {
-    setInfo((prev) => {
-      return {
-        ...info,
-        bio: "Hello",
-      };
-    });
-  };
-
-  console.log(`re-render`);
+  const { toggleTheme } = useContext(ThemeContext);
   return (
-    <div className="App">
-      <h1>{JSON.stringify(info)}</h1>
-      <button onClick={handleUpdate}>Update</button>
+    <div>
+      <button onClick={toggleTheme}>Toggle theme</button>
+      <Content />
     </div>
   );
 }

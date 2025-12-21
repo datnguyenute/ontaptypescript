@@ -1,9 +1,9 @@
-1) Scope & mục tiêu
+## Scope & mục tiêu
 
 Tên app: Team Todo (multi-tenant nhẹ)
 Mục tiêu: quản lý todo theo workspace/project, có role/permission, audit log, realtime/notification, API chuẩn, test + deploy.
 
-2) Personas & quyền
+## Personas & quyền
 Roles (RBAC)
 
 Owner: toàn quyền trong workspace
@@ -24,12 +24,12 @@ Task: task:create, task:update, task:delete, task:view
 
 Comment/Attachment: comment:create, attachment:upload, …
 
-Senior angle: RBAC + permission matrix + guard + decorator @Permissions() trong Nest.
+Senior angle: RBAC + ~~permission matrix +~~ guard + decorator @Permissions() trong Nest.
 
-3) Tính năng chính (Functional requirements)
+# Tính năng chính (Functional requirements)
 A. Authentication
 
-Đăng ký/đăng nhập bằng email + password
+Đăng ký/đăng nhập bằng email + password + ~~google~~
 
 Password hashing (argon2/bcrypt), policy tối thiểu
 
@@ -43,7 +43,7 @@ Logout (revoke refresh token)
 
 Forgot password + reset password (email link token)
 
-Optional “Senior++”: OAuth Google (Passport strategy)
+Optional ~~“Senior++”: OAuth Google (Passport strategy)~~
 
 B. Authorization
 
@@ -73,7 +73,7 @@ Attachment (metadata)
 
 Task fields:
 
-title, description (markdown optional)
+title, description (~~markdown optional~~)
 
 status: todo / in_progress / done / archived
 
@@ -105,11 +105,11 @@ Comments theo task (CRUD)
 
 Mention @user (optional)
 
-Activity feed (audit log):
+~~Activity feed (audit log):~~
 
-ai làm gì, lúc nào (create/update/status change/assign)
+~~ai làm gì, lúc nào (create/update/status change/assign)~~
 
-E. Notification / Realtime (optional nhưng rất “senior”)
+E. Notification / Realtime (optional nhưng rất “senior”) → tag user thì hiện noti
 
 Chọn 1 trong 2:
 
@@ -127,11 +127,11 @@ Rate limit login endpoint
 
 Account lock / backoff sau N lần fail
 
-2FA TOTP (optional, cực ăn điểm)
+~~2FA TOTP (optional, cực ăn điểm)~~
 
-Audit log truy cập admin actions
+~~Audit log truy cập admin actions~~
 
-4) Non-functional requirements (điểm senior)
+## Non-functional requirements (điểm senior)
 Security
 
 Validate input bằng DTO + class-validator
@@ -150,7 +150,7 @@ File upload:
 
 validate mime/size
 
-scan basic (optional)
+~~scan basic (optional)~~
 
 signed URL (nếu dùng S3/GCS) hoặc local + limit
 
@@ -204,7 +204,7 @@ Backend: Render/Fly.io/GCP Cloud Run
 
 FE: Vercel
 
-5) API Requirements (BE)
+## API Requirements (BE)
 REST endpoints (gợi ý)
 
 Auth:
@@ -263,29 +263,11 @@ User chỉ truy cập record thuộc workspace mình có quyền
 
 Audit log được ghi tự động ở layer service/interceptor
 
-6) Frontend Requirements (Next.js)
+# Frontend Requirements (Next.js)
 
 Auth pages: login/register/forgot/reset
 
-App shell:
-
-workspace switcher
-
-project list
-
-kanban + list view
-
-State management:
-
-React Query (recommended) + optimistic update
-
-Protected routes (middleware)
-
-Role-based UI: ẩn/disable action theo permission
-
-Error handling + toast + empty/loading states
-
-7) Deliverables (để đem đi phỏng vấn)
+# Deliverables (để đem đi phỏng vấn)
 
 README: kiến trúc, trade-offs, cách chạy local
 
@@ -302,3 +284,45 @@ DB ERD
 Auth flow (access/refresh)
 
 RBAC flow (guard -> permission resolver)
+
+DB → ERD
+
+3NF → normalize DB
+
+NextJS → Page Router
+
+
+# Component build bằng tailwinss
+https://ui.shadcn.com/ 
+
+
+
+Timeline:
+- T4 có timeline project
+
+
+
+
+# Gửi timeline cho khách hàng
+# Release theo pharse
+# Tuần đầu: Front-end kết nối BE
+- Skeleton
+
+# Tuần 2 DB + API endpoint cho BE
+outcome: Có swagger,....
+
+# Tuần 3: UI Cho project 
+Authen autho
+
+## Scale down xuống
+## Có migrate thêm data tay
+
+# Mistone 1
+
+# Chưa làm:
+  ## Noti
+
+# Task 
+## Vẽ sơ đồ tổng quan hệ thống
+
+style tailwinss trong antd
